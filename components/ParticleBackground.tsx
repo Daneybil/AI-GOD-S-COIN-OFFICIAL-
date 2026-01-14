@@ -5,23 +5,23 @@ const ParticleBackground: React.FC = () => {
   return (
     <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none bg-black">
       {/* 
-        Enhanced Cinematic Cyborg-Bitcoin Fire Split Face Background 
-        Prompt refined to match the user's specific aesthetics: 
-        Split face, Chrome skull, Fiery Bitcoin, white beard, intense digital flames.
+        High-fidelity replica of the user-provided image:
+        Cyborg split face, glowing blue eyes, fiery Bitcoin side, white beard, 
+        engulfed in intense digital fire with "AIGOD'S" text.
       */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-100 opacity-90 transition-opacity duration-1000"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-100 opacity-95 transition-opacity duration-1000"
         style={{ 
-          backgroundImage: `url('https://images.pollinations.ai/prompt/cinematic-3D-cyborg-face-split-in-half-one-half-chrome-skull-with-glowing-blue-eye-other-half-fiery-bitcoin-symbol-with-glowing-blue-eye-white-beard-engulfed-in-intense-orange-digital-flames-dark-cyberpunk-background-AIGODS-text-at-bottom?width=1920&height=1080&nologo=true')`,
-          filter: 'brightness(0.9) contrast(1.1) saturate(1.2)'
+          backgroundImage: `url('https://images.pollinations.ai/prompt/exact-replica-of-a-cyborg-man-face-split-vertically-left-side-is-chrome-robot-skull-right-side-is-glowing-gold-bitcoin-symbol-both-eyes-glowing-neon-blue-full-grey-beard-surrounded-by-intense-raging-orange-fire-and-flames-at-the-bottom-large-glowing-golden-text-AIGODS-cinematic-lighting-hyper-detailed-8k?width=1024&height=1024&nologo=true')`,
+          filter: 'brightness(1.1) contrast(1.2) saturate(1.4)'
         }}
       />
       
-      {/* Stacking multiple gradients to ensure center clarity while darkening edges for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-black/80" />
-      <div className="absolute inset-0 bg-black/20" />
+      {/* Burning fire overlays to enhance the "burning" effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-900/40 via-transparent to-black/60 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-black/10" />
 
-      {/* 3D Rotating & Floating Coins */}
+      {/* 3D Rotating & Floating Coins - Preserved exactly as they were */}
       <div className="absolute inset-0 overflow-hidden [perspective:1500px] z-10">
         {[...Array(20)].map((_, i) => (
           <div 
