@@ -98,7 +98,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ logoUrl }) => {
     setSelectedImage(null);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
       const contents: any[] = [{ text: `${SYSTEM_INSTRUCTION}\n\nUser Query: ${inputText}` }];
       
       if (userMessage.image) {
@@ -133,7 +133,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ logoUrl }) => {
 
   const startVoiceCall = async () => {
     setIsInCall(true);
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
     
     audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
     const outputNode = audioContextRef.current.createGain();
@@ -156,7 +156,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ logoUrl }) => {
           }
         },
         onclose: () => setIsInCall(false),
-        onerror: (e) => console.error("Live Voice Error:", e)
+        onerror: (e: any) => console.error("Live Voice Error:", e)
       },
       config: {
         responseModalities: [Modality.AUDIO],

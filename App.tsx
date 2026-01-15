@@ -341,7 +341,7 @@ const App: React.FC = () => {
       <h1 className="text-6xl md:text-9xl font-black mb-2 text-gradient-magenta tracking-tighter text-center">
         AIGOD'S
       </h1>
-      <p className="text-cyan-400 font-black tracking-[0.5em] text-xs md:text-sm mb-10 uppercase">The Future is NOW – Become a God in Crypto 👑</p>
+      <p className="text-cyan-400 font-black tracking-[0.5em] text-xs md:text-sm mb-10 uppercase">The Future of NOW – Become a God in Crypto 👑</p>
 
       {/* Description Section - Updated text and size */}
       <div className="max-w-4xl text-center px-4 space-y-6">
@@ -627,10 +627,10 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      {/* Free Claim Button - Updated with Per-Wallet Logic */}
+      {/* Free Claim Button - Fixed boolean type casting */}
       <button 
         onClick={handleClaimAirdrop}
-        disabled={connectedAddress && claimedWallets.has(connectedAddress)}
+        disabled={!!(connectedAddress && claimedWallets.has(connectedAddress))}
         className={`mt-20 text-black font-black text-3xl md:text-5xl py-10 px-24 md:px-36 rounded-[3rem] transition-all uppercase tracking-tight group ${
           connectedAddress && claimedWallets.has(connectedAddress) 
             ? 'bg-gray-700 text-gray-400 cursor-not-allowed border-4 border-gray-600' 
