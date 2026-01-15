@@ -10,16 +10,19 @@ const ParticleBackground: React.FC = () => {
         engulfed in intense digital fire with "AIGOD'S" text.
       */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-100 opacity-95 transition-opacity duration-1000"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-zoom opacity-40 transition-opacity duration-1000"
         style={{ 
           backgroundImage: `url('https://images.pollinations.ai/prompt/exact-replica-of-a-cyborg-man-face-split-vertically-left-side-is-chrome-robot-skull-right-side-is-glowing-gold-bitcoin-symbol-both-eyes-glowing-neon-blue-full-grey-beard-surrounded-by-intense-raging-orange-fire-and-flames-at-the-bottom-large-glowing-golden-text-AIGODS-cinematic-lighting-hyper-detailed-8k?width=1024&height=1024&nologo=true')`,
-          filter: 'brightness(1.1) contrast(1.2) saturate(1.4)'
+          filter: 'brightness(0.7) contrast(1.3) saturate(1.2)'
         }}
       />
       
-      {/* Burning fire overlays to enhance the "burning" effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-900/40 via-transparent to-black/60 mix-blend-overlay" />
-      <div className="absolute inset-0 bg-black/10" />
+      {/* Burning fire overlays to enhance the "burning" effect - Darker and more atmospheric */}
+      <div className="absolute inset-0 bg-gradient-to-t from-orange-950/60 via-black/80 to-black/95 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-black/40" />
+      
+      {/* Subtle pulsing heat glow */}
+      <div className="absolute inset-0 animate-pulse-slow bg-orange-500/5 mix-blend-screen" />
 
       {/* 3D Rotating & Floating Coins - Preserved exactly as they were */}
       <div className="absolute inset-0 overflow-hidden [perspective:1500px] z-10">
@@ -38,7 +41,7 @@ const ParticleBackground: React.FC = () => {
               className="coin-container relative w-12 h-12 md:w-20 md:h-20 [transform-style:preserve-3d] animate-spin-3d shadow-[0_0_40px_rgba(234,179,8,0.4)]"
               style={{
                 animationDuration: `${4 + Math.random() * 7}s`,
-                opacity: 0.5 + Math.random() * 0.4
+                opacity: 0.3 + Math.random() * 0.3
               }}
             >
               {/* Gold Coin 3D Edging */}
@@ -77,12 +80,30 @@ const ParticleBackground: React.FC = () => {
           75% { transform: translateY(40px) translateX(20px) scale(1.05) rotate(2deg); }
         }
 
+        @keyframes slow-zoom {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.15); }
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.1; }
+          50% { opacity: 0.3; }
+        }
+
         .animate-spin-3d {
           animation: spin-3d linear infinite;
         }
 
         .animate-float {
           animation: float ease-in-out infinite;
+        }
+
+        .animate-slow-zoom {
+          animation: slow-zoom 30s ease-in-out infinite;
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 5s ease-in-out infinite;
         }
       `}</style>
     </div>

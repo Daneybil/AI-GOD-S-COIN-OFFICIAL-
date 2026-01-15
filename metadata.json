@@ -1,5 +1,7 @@
 {
   "name": "AIGODS Presale Landing Page",
   "description": "A high-fidelity replica of the AIGODS decentralized superintelligence token landing page with a cyberpunk aesthetic, particle background, and interactive presale calculator.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "microphone"
+  ]
 }
